@@ -13,6 +13,7 @@
     }
   },
   "scripts": {
+    "prebuild": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -22,7 +23,7 @@
     "@notrealstudio/nr-ui-protocol": "file:../nr-ui-protocol"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^24.19.0",
     "typescript": "^5.3.0",
     "vitest": "^2.0.0"
   },
@@ -35,5 +36,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Not-Real-Studio/backend-services.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
